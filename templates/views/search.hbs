@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        #searchForm {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 340px;
+    width: 400px;
+    margin: 0 auto;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+input[type="text"] {
+    width: 18rem;
+    padding: 15px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+button a {
+    text-decoration: none;
+    color: white;
+}
+h1 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+/* Style the form elements on focus (optional) */
+input[type="text"]:focus, input[type="submit"]:focus, button:focus {
+    outline: none;
+    border: 1px solid #007BFF;
+    box-shadow: 0 0 5px #007BFF;
+}
+    </style>
+</head>
+<body>
+    <form id="searchForm">
+         <h1>search</h1>
+        <label for="newPassword">Road name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter the road name "/>
+        <input type="submit" >
+        <br>
+        <button id="btn"><a href="/updateRequest">change data</a></button>
+    </form>
+    <h1 id="name2"></h1>
+    <h1 id="length"></h1>
+    <h1 id="width"></h1>
+    <h1 id="contractorComp"></h1>
+    <h1 id="contractorN"></h1>
+    <h1 id="endDate"></h1>
+    <h1 id="startDate"></h1>
+     <h1 id="wardN"></h1> 
+     <h1 id="initialp"></h1> 
+     <h1 id="endingp"></h1> 
+      <h1 id="tenure"></h1> 
+       <h1 id="lastcontract"></h1>   
+    
+    <script>
+            const searchForm = document.getElementById('searchForm');
+
+            searchForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+            try {
+                const response = await fetch(`/search-road/${name}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const responseData = await response.json();
+                console.log(responseData[0].name)
+                if (responseData) {
+                    const name2 = document.getElementById('name2');
+                    const length = document.getElementById('length');
+                    const width = document.getElementById('width');
+                    const contractorComp = document.getElementById('contractorComp');
+                    const contractorN = document.getElementById('contractorN');
+                    const endDate = document.getElementById('endDate');
+                    const startDate = document.getElementById('startDate'); 
+                    const wardN = document.getElementById('wardN'); 
+                    const initialp = document.getElementById('initialp'); 
+                    const endingp = document.getElementById('endingp'); 
+                    const tenure = document.getElementById('tenure'); 
+                    const lastcontract = document.getElementById('lastcontract'); 
+
+                    name2.innerHTML = `Name: ${responseData[0].name}`;
+                    length.innerHTML = `Length: ${responseData[0].length}`;
+                    width.innerHTML = `Width: ${responseData[0].width}`;
+                    contractorComp.innerHTML = `contractor Company: ${responseData[0].contractorCompany}`;
+                    contractorN.innerHTML = `contractor Name: ${responseData[0].contractorName}`;
+                    endDate.innerHTML = `ending Date: ${responseData[0].contractendingDate}`;
+                    startDate.innerHTML = `starting Date: ${responseData[0].contractstartingDate}`;
+                    wardN.innerHTML = `ward Number: ${responseData[0].wardNumber}`;
+                    initialp.innerHTML = `Road Initial point: ${responseData[0]. Road_initial_point}`;
+                    endingp.innerHTML = `Road Ending point: ${responseData[0]. Road_ending_point}`;
+                    tenure.innerHTML = `Tenure: ${responseData[0].Tenure}`;
+                    lastcontract.innerHTML = `Last Contract company: ${responseData[0].Last_contract_company}`;   
+                    console.log("get result succesfull");
+                } else {
+                    // Handle error here
+                    console.error('Error:', response.status);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

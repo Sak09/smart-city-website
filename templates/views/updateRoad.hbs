@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Updation</title>
+   <link rel="stylesheet" href="updateroad.css">
+</head>
+<style>
+     body {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         margin: 0;
+     }
+     form {
+         text-align: center;
+         padding: 20px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     }
+     h1 {
+         font-size: 24px;
+     }
+     label {
+         display: block;
+         margin-top: 10px;
+     }
+     input {
+         width: 16rem;
+          padding: 10px;
+         margin: 5px 0;
+         border: 1px solid #ccc;
+         border-radius: 3px;
+     }
+     input[type="submit"] {
+         background-color: #007BFF;
+         color: #fff;
+         cursor: pointer;
+     }
+     input[type="submit"]:hover {
+      background-color: #0056b3;
+     }
+     #message {
+         margin-top: 20px;
+     }
+</style>
+<body>
+   <form id="updateform">
+      <h1>update Roads data</h1>
+      <label for="name">Road  Name:</label>
+      <input type="text" id="name" name="name" required placeholder="Enter new road name" />
+      <label for="contractorName">Contractor Name</label>
+      <input type="text" id="contractorName" name="contractorName" required placeholder="Enter new name" />
+       <label for="contractorCompany">Contractor Company:</label>
+      <input type="text" id="contractorCompany" name="contractorCompany" required placeholder="New contractor company" />
+       <label for="contractstartingDate">Contract start date</label>
+      <input type="text" id="contractstartingDate" name="contractstartingDate" required placeholder="dd/mm/yyyy" />
+       <label for="contractendingDate">Contract end Date</label>
+      <input type="text" id="contractendingDate" name="contractendingDate" required placeholder="dd/mm/yyyy" />
+      <label for="Tenure">tenure</label>
+      <input type="text" id="Tenure" name="Tenure" required placeholder=" months" />
+      <h1 id="result"></h1>
+      <input type="submit">
+   </form>
+   <h1 id="message"></h1>
+   <script>
+      console.log("hello")
+      document.addEventListener('DOMContentLoaded', async (a) => {
+        const id="{{token}}"
+        console.log("id",id)
+         const updateform = document.getElementById('updateform');
+         updateform.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const contractorName = document.getElementById('contractorName').value;
+            const contractorCompany = document.getElementById('contractorCompany').value;
+            const contractstartingDate = document.getElementById('contractstartingDate').value;
+            const contractendingDate = document.getElementById('contractendingDate').value; 
+             const Tenure = document.getElementById('Tenure').value; 
+            console.log(name, contractorName,contractorCompany,contractstartingDate,contractendingDate,Tenure)
+            // Make a GET request to the same API endpoint with the token
+            try {
+               const response = await fetch(`/road-update/${id}`, {
+                  method: 'PUT',
+                  headers: {
+                     'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ name, contractorName,contractorCompany,contractstartingDate,contractendingDate,Tenure })
+               });
+               const responseData = await response.json();
+            console.log(responseData)
+               if (responseData) {
+                  const result = document.getElementById('result');
+                  result.innerHTML = 'details updated succesfully';
+                  console.log("details updated succesfully");
+               } else {
+                  // Handle error here
+                  console.error('Error:', response.status);
+               }
+            } catch (error) {
+               console.error('Error:', error.message);
+            }
+         });
+      });
+   </script>
+</body>
+</html>

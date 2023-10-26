@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="slide.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="foots.css" />
+  <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="photo.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+</head>
+<body>
+  <div class="con"><img src="s1.jpg" alt="1" id="body1">
+    <span class="con1">AGRA SMART CITY LTD.</span>
+  </div>
+  <div class="con2"><img src="g1.webp" alt="2" id="body2"></div>
+  <nav class="navbar">
+    <div class="hamburger-icon">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <ul>
+      <li><a class="active" href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="/aboutus">About us</a></li>
+      <li class="dropdown">
+        <a href="/login" class="dropdown-btn"><i class="fa-solid fa-right-to-bracket"> </i>Login <i
+            class="fa-solid fa-caret-down"></i></a> 
+      <li class="dropdown-content">
+      <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
+       <li class="search-container">
+      <button class="btn2" id="searchButton"><a href="/search">search</a></button>
+    </li>
+    </ul>
+    </li>
+    </ul>
+  </nav>
+  {{>home}}
+</body>
+</html>

@@ -1,0 +1,214 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#body1{
+  width: 13em;
+  margin-left: 7em;
+}
+#body2{
+  width: 13em;
+  float: right;
+ margin-top: -10em;
+  margin-right: 15em;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    overflow: hidden;
+    background-color: #12477f;
+  }
+  
+ .navbar li {
+    display: inline-block;
+    border-right:1px solid #bbb;
+  }
+  
+ .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+ .navbar li a:hover:not(active) {
+    background-color: #d49d13;
+  }
+
+ .active{
+    background-color: #d49d13;
+  }
+  .navbar{
+    margin-top: 0px;
+  }
+  /* .btn{
+    float: right;
+    padding: 10px;
+  } */
+  .search-container {
+    float: right;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  #search {
+    flex: 0;
+    border: none;
+    margin-right: 6px;
+    padding: 10px;
+    border-radius: 4px 0 0 4px;
+  }
+  .btn2 {
+    font-size: medium;
+    background-color: #ff9900;
+    border: none;
+    color: black;
+    border-radius: 0 4px 4px 0;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: -10px;
+  }
+  .btn2:hover {
+    background-color: #e68a00;
+  }
+  .navbar .search-container{
+    float: right;
+  }
+  /* Style the dropdown menu */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  /* Style the dropdown button */
+  .dropdown-btn {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Show the dropdown menu when the dropdown button is hovered */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+    .vertical-menu {
+      width: 100%;
+      height: 348px;
+      overflow-y: auto;
+      border: solid 1px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: transparent transparent;
+    }
+    .vertical-menu a {
+      background-color: #5c6468;
+      color: white;
+      display: block;
+      padding: 12px;
+      text-decoration: none;
+      position: relative;
+      top: 0;
+      transition: top 60s ease;
+    }
+    
+    .vertical-menu a:hover{
+      top: -5px;
+      color: black;
+      border-bottom: 1px dashed #8e0000;
+    }
+    .vertical-menu::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .vertical-menu::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+    .list-item {
+      width: calc(400px - 10px); /* Adjust the width as needed */
+      margin-right: 5px;
+    }
+    .list-item h2 {
+      margin: 0px;
+      padding: 19px;
+      background-color: #5c6164;
+      color: black;
+      width: 100%;
+    }
+    .line{
+        border-bottom: 1px dashed #8e0000 ;
+    }
+    .head{
+      border: solid 1px;
+      border-radius: 3px;
+    }
+    .container1{
+     top: 65%;
+     opacity: 1.8;
+    } 
+    .con1{
+      font-size: x-large;
+      font-weight: bolder;
+      
+    }
+    .foot{
+      height: 100px;
+    }
+    .con{
+      display: flex;
+      align-items: center;
+    }
+    .para{
+      padding: 30px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .para h2{
+      color: black;
+      background-color: white;
+      
+    }
+    .nav-search{
+      display: flex;
+      justify-content: space-evenly;
+      background-color: orange;
+      width: 10px;
+      height: 6px;
+      border-radius:  4px;
+    }
+    .hamburger-icon {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 999;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .hamburger-icon {
+        display: block;
+      }
+    }
+    .fa-bars {
+      font-size: 24px;
+      color: #fff;
+    }
+    .backgorund{
+      background-color: #fff;
+    }
+ 

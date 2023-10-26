@@ -1,0 +1,53 @@
+#updateform {
+    width: 300px; /* Set the width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    margin-top: 50px; /* Add space from the top */
+    text-align: center; /* Center the form's content */
+  
+    /* Add some padding and a border for aesthetics */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  
+  /* Style the labels */
+  label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  /* Style the text inputs */
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Style the submit button */
+  input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Style the result heading */
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #007BFF;
+  }
+  
+  /* Optional: Style the h1 for the form title */
+  h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF;
+  }
+       
